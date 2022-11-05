@@ -6,7 +6,9 @@ const Sidebar: NextComponentType<NextPageContext, {}, Props> = (
   props: Props,
 ) => {
   return (
-    <div></div>
+    <div>
+        
+    </div>
   )
 }
 
