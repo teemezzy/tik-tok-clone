@@ -19,6 +19,7 @@ const Navbar: NextComponentType<NextPageContext, {}, Props> = (props: Props,) =>
                 <div className="flex items-center gap-4 ">
                     <Link href='/'>
                         <div className="w-[100px] md:w-[130px]">
+                            
 
                             <Image src="/tik-tok-logo.svg" alt='logo' width={100} height={50} priority className='cursor-pointer w-auto h-auto' />
 
