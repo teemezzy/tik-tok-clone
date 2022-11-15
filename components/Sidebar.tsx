@@ -24,7 +24,16 @@ const Sidebar: NextComponentType<NextPageContext, {}, Props> = (
         {
           showSidebar ? <AiOutlineMenu /> : <ImCancelCircle />
         }
+      </div>
+      {showSidebar && (
+        <div className='w-64 h-screen fixed top-0 left-0 bg-white shadow-2xl'>
+          <div className='xl:w-400 w-20 flex flex-col justify-start mb-10 border-r-2 border-gray-100 xl:border-0 p-3'>
 
+
+          </div>
+        </div>
+      )}
+      <div className={`fixed top-0 left-0 w-64 h-full bg-white shadow-2xl transform transition-all duration-300 ease-in-out ${showSidebar ? 'translate-x-0' : '-translate-x-full'}`}>
       </div>
     </div>
   )
