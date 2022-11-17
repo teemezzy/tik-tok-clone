@@ -8,7 +8,7 @@ module.exports = {
     extend: {
       width: {
         1600: '1600px',
-        400: '400px',
+        400: '500px',
         450: '450px',
         210: '210px',
         550: '550px',
@@ -22,7 +22,7 @@ module.exports = {
         458: '458px',
       },
       top: {
-        ' 50%': '50%',
+          '50%': '50%',
       },
       backgroundColor: {
         primary: '#F1F1F2',
