@@ -2,7 +2,7 @@ import type { NextComponentType, NextPageContext } from "next";
 import { NextPage } from 'next'
 import { useState } from 'react'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
+
 import { GoogleLogin, GoogleLogout } from 'react-google-login'
 import { AiFillHome, AiOutlineMenu } from 'react-icons/ai'
 import { ImCancelCircle } from 'react-icons/im'
@@ -18,7 +18,7 @@ const Sidebar: NextComponentType<NextPageContext, {}, Props> = (
   const [showSidebar, setShowSidebar] = useState(false)
   // const userProfile = JSON.parse(localStorage.getItem('userProfile') || '{}')
   const userProfile = false
-  const router = useRouter()
+  
 
   const handleClick = () => { showSidebar ? setShowSidebar(false) : setShowSidebar(true) }
   // const handleClick = () => { setShowSidebar((prev) => !prev) }
@@ -45,7 +45,7 @@ const Sidebar: NextComponentType<NextPageContext, {}, Props> = (
             </Link>
           </div>
           {!userProfile && (
-            <div className=''>
+            <div className='xl:block hidden'>
               <div className='pr-4'>
 
                 <p className='text-center py-3'>Click here to login</p>
