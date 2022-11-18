@@ -10,7 +10,7 @@ const Footer: NextComponentType<NextPageContext, {}, Props> = (
     <div className="mt-6 hidden xl:block">
         <div className='flex flex-wrap gap-2 mt-5'>
             {footerList1.map((item,index)=>(
-                <p key={index} className='text-gray-400 text-sm hover:underline cursor-pointer'>
+                <p key={index} className='text-gray-400 text-sm hover:underline cursor-pointer '>
                     {item}
                 </p>
             ))}

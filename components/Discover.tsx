@@ -22,7 +22,7 @@ const Discover: NextComponentType<NextPageContext, {}, Props> = (
             <p className='text-gray-500 font-semibold m-3 mt-4 hidden xl:block'>Popular Topics</p>
             <div className='flex flex-wrap gap-3'>
                 {topics.map((link, index) => (
-                    <Link href={`/?topic=${link.name}`} key={index}>
+                    <Link href={`/?topic=${link.name}`} key={link.name}>
                         <div className={topic === link.name ? activeTopicStyle : topicStyle}>
                             <span className='text-2xl font-bold xl:text-md'>{link.icon}</span>
                             <span className='text-md font-medium xl:block hidden capitalize'>{link.name}</span>

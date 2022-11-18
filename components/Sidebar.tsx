@@ -25,7 +25,7 @@ const Sidebar: NextComponentType<NextPageContext, {}, Props> = (
   const normalLink = 'flex items-center justify-center xl:justify-start cursor-pointer font-semibold text-gray-800 gap-3 p-3 rounded hover:bg-gray-100';
 
   return (
-    <div>
+    <div className=''>
       <div className='block xl:hidden m-2 ml-4 mt-3 bg-white text-xl shadow-2xl' onClick={handleClick}>
         {
           showSidebar ? <ImCancelCircle /> : <AiOutlineMenu />
@@ -46,7 +46,7 @@ const Sidebar: NextComponentType<NextPageContext, {}, Props> = (
           </div>
           {!userProfile && (
             <div className='xl:block hidden'>
-              <div className='pr-4'>
+              <div className='pr-4 '>
 
                 <p className='text-center py-3'>Click here to login</p>
                 <GoogleLogin clientId=""
