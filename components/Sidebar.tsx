@@ -18,7 +18,7 @@ const Sidebar: NextComponentType<NextPageContext, {}, Props> = (
   const [showSidebar, setShowSidebar] = useState(false)
   // const userProfile = JSON.parse(localStorage.getItem('userProfile') || '{}')
   const userProfile = false
-  
+
 
   const handleClick = () => { showSidebar ? setShowSidebar(false) : setShowSidebar(true) }
   // const handleClick = () => { setShowSidebar((prev) => !prev) }
@@ -58,19 +58,20 @@ const Sidebar: NextComponentType<NextPageContext, {}, Props> = (
               </div>
             </div>
           )}
-          <Discover/>
+          <Discover />
           <SuggestedAccounts />
-          <Footer/>
+          <Footer />
         </div>
       )}
-      {/* <div className={`fixed top-0 left-0 w-64 h-full bg-white shadow-2xl transform transition-all duration-300 ease-in-out ${showSidebar ? 'translate-x-0' : '-translate-x-full'}`}>
-            <div className=' sticky top-0 left-0 shadow-2xl'>
-
-            </div>
-      </div> */}
+    
     </div>
   )
 }
 
 export default Sidebar
 
+  {/* <div className={`fixed top-0 left-0 w-64 h-full bg-white shadow-2xl transform transition-all duration-300 ease-in-out ${showSidebar ? 'translate-x-0' : '-translate-x-full'}`}>
+            <div className=' sticky top-0 left-0 shadow-2xl'>
+
+            </div>
+      </div> */}
