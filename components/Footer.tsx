@@ -22,7 +22,7 @@ const Footer: NextComponentType<NextPageContext, {}, Props> = (props: Props,) =>
         <List items={footerList1} />
         <List items={footerList2} />
         <List items={footerList3} />
-        <p className='text-gray-400 text-sm mt-5'>2022 Torth Tik-Tok</p>
+        <p className='text-gray-400 text-sm mt-5'>2022 TORTH Tik-Tok</p>
       </div>
     </div>
   )

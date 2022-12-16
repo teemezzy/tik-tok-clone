@@ -7,8 +7,7 @@ const SuggestedAccounts: NextComponentType<NextPageContext, {}, Props> = (
 ) => {
   return (
     <div>
-        
-    </div>
+        Suggested Follows    </div>
   )
 }
 
