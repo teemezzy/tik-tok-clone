@@ -4,12 +4,12 @@ import Image from 'next/image'
 import axios from 'axios'
 import { Video } from '../types'
 
-interface IProps {
+interface Props {
   videos: Video[]
 
 }
 
-const Home = ({ videos }: IProps) => {
+const Home = ({ videos }: Props) => {
   console.log(videos)
   return (
     <div >
