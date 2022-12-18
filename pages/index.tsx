@@ -3,6 +3,8 @@ import Head from 'next/head'
 import Image from 'next/image'
 import axios from 'axios'
 import { Video } from '../types'
+import VideoCard from '../components/VideoCard'
+import NoVideos from '../components/NoVideos'
 
 interface Props {
   videos: Video[]
@@ -20,7 +22,11 @@ const Home = ({ videos }: Props) => {
       </Head>
 
       <main>
-        <h1 className='text-3xl font-bold '>I am me</h1>
+        <div>
+          {videos.length? videos.map((video: Video) => (
+            <VideoCard post= {video} key={video._id}/>
+          )): <NoVideos text= {'No Post Found'}/>}
+        </div>
 
       </main>
 
