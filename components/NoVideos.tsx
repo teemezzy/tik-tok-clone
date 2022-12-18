@@ -1,14 +1,14 @@
 import type { NextComponentType, NextPageContext } from "next";
 
 interface Props {
-    text: "No Post Found"
+  text: "No Post Found"
 }
 
 const NoVideos: NextComponentType<NextPageContext, {}, Props> = (
   props: Props,
 ) => {
   return (
-    <div></div>
+ <div></div>
   )
 }
 
