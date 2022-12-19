@@ -12,7 +12,7 @@ interface Props {
 }
 
 const Home = ({ videos }: Props) => {
-  console.log(videos)
+  // console.log(videos)
   return (
     <div >
       <Head>
