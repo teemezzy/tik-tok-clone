@@ -1,8 +1,7 @@
 import type { NextComponentType, NextPageContext } from "next";
-import { NextPage } from 'next'
+import { useRouter } from 'next/router';
 import { useState } from 'react'
 import Link from 'next/link'
-
 import { GoogleLogin, GoogleLogout } from 'react-google-login'
 import { AiFillHome, AiOutlineMenu } from 'react-icons/ai'
 import { ImCancelCircle } from 'react-icons/im'
@@ -15,7 +14,8 @@ interface Props { }
 const Sidebar: NextComponentType<NextPageContext, {}, Props> = (
   props: Props,
 ) => {
-  const [showSidebar, setShowSidebar] = useState(false)
+  const [showSidebar, setShowSidebar] = useState<Boolean>(true);
+  const { pathname } = useRouter();
   // const userProfile = JSON.parse(localStorage.getItem('userProfile') || '{}')
   const userProfile = false
 
@@ -23,6 +23,7 @@ const Sidebar: NextComponentType<NextPageContext, {}, Props> = (
   const handleClick = () => { showSidebar ? setShowSidebar(false) : setShowSidebar(true) }
   // const handleClick = () => { setShowSidebar((prev) => !prev) }
   const normalLink = 'flex items-center justify-center xl:justify-start cursor-pointer font-semibold text-gray-800 gap-3 p-3 rounded hover:bg-gray-100';
+  const activeLink = 'flex items-center gap-3 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-semibold text-[#F51997] rounded';
 
   return (
     <div className=''>
@@ -32,15 +33,16 @@ const Sidebar: NextComponentType<NextPageContext, {}, Props> = (
         }
       </div>
       {showSidebar && (
-
-        <div className='xl:w-400 w-20 flex flex-col justify-start mb-10 border-r-2 border-gray-100 xl:border-0 p-3'>
+        <div className='xl:w-400 w-20 flex flex-col justify-start mb-10 border-r-2 border-gray-100 xl:border-0 p-3 '>
           <div className='xl:border-b-2 border-gray-200 xl:pb-4'>
             <Link href='/'>
-              <div className={normalLink}>
+              <div className={pathname === '/' ? activeLink : normalLink}>
                 <p className='text-2xl'>
-                  <AiFillHome className='text-2xl' />
+                  <AiFillHome />
                 </p>
-                <span className='text-xl hidden xl:block'>For You</span>
+                <span className='capitalize text-xl hidden xl:block'>
+                  For You
+                </span>
               </div>
             </Link>
           </div>
