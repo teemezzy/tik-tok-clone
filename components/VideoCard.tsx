@@ -28,13 +28,6 @@ const VideoCard: NextPage<Props> = ({ post }) => {
                 </div>
 
             </div>
-            {/* {posts.map((post: Video) => (
-                <div>
-                    <h1>{post.caption}</h1>
-                    <video src={post.videoUrl} controls loop></video>
-                </div>
-            )} */}
-
         </div>
     )
 }
