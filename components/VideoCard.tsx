@@ -17,8 +17,8 @@ const VideoCard: NextPage<Props> = ({ post }) => {
     const [playing, setPlaying] = useState<Boolean>(false)
     const [muted, setMuted] = useState<Boolean>(false)
 
-    const handleMouseEnter = () => {setisHover(true)}
-    const handleMouseLeave = () => {setisHover(false)}
+    const handleMouseEnter = () => { setisHover(true) }
+    const handleMouseLeave = () => { setisHover(false) }
 
     return (
         <div className='flex flex-col border-b-2 border-gray-200 pb-6'>
@@ -27,21 +27,21 @@ const VideoCard: NextPage<Props> = ({ post }) => {
                     <div className='md:w-16 md:h-16 w-10 h-{62px}'>
                         <Link href='/'>
                             <div>
-<Image src={post.postedBy.image} alt='Profile Image' width={62} height={62} className='rounded-full object-contain object-center' />
+                                <Image src={post.postedBy.image} alt='Profile Image' width={62} height={62} className='rounded-full object-contain object-center' />
                             </div>
 
                         </Link>
                     </div>
                     <div>
-                        <Link href='/'> 
-                        <div className="flex gap-2 items-center " >
-                            <p className="flex gap-2 items-center md:text-md font-bold text-primary ">
+                        <Link href='/'>
+                            <div className=" items-center " >
+                                <p className="capitalize font-medium text-xs text-gray-400 hidden md:block">{post.postedBy.userName}</p>
+                                <p className="flex gap-2 items-center md:text-md font-bold text-primary ">
 
-{post.postedBy.userName} {``}
-<GoVerified className="text-blue-400 text-md"/>
-                            </p>
-                            <p className="capitalize font-medium text-xs text-gray-400 hidden md:block">{post.postedBy.userName}</p>
-                        </div>
+                                    {post.postedBy.userName} {``}
+                                    <GoVerified className="text-blue-400 text-md" />
+                                </p>
+                            </div>
                         </Link>
                     </div>
                 </div>
@@ -56,8 +56,8 @@ const VideoCard: NextPage<Props> = ({ post }) => {
                     {isHover && (
                         <div>
                             {playing ? (
-                                <button className="text-black text-2xl lg:text-4xl"><BsFillPauseFill/></button>
-                            ): (<button><BsFillPlayFill/></button>)}
+                                <button className="text-black text-2xl lg:text-4xl"><BsFillPauseFill /></button>
+                            ) : (<button><BsFillPlayFill /></button>)}
                         </div>
                     )}
                 </div>
