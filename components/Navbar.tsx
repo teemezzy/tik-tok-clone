@@ -18,29 +18,35 @@ const Navbar: NextComponentType<NextPageContext, {}, Props> = (props: Props,) =>
     return (
         <div>
             <div className=" w-full flex items-center justify-between px-4 py-7 bg-white shadow-lg">
-                <div className="flex items-center gap-4 ">
+                <div className="flex items-center gap-4 justify-between w-full">
                     <Link href='/'>
                         <div className="w-[100px] md:w-[130px]">
                             <Image src="/tik-tok-logo.svg" alt='logo' width={100} height={50} priority className='cursor-pointer w-auto h-auto'/>
                         </div>
                     </Link>
 
-                    <div>SEARCH</div>
+                    <div>
+                        <input type="Search" placeholder="Search" className="border"/>
+                        <button className="border">Search</button>
+                        </div>
 
                     <div>
                     {user ? (
                         <div>Logged In</div>
                     ) : (
-                       <div><GoogleLogin   
-                       onSuccess={credentialResponse => {
-                        getUser(credentialResponse)
-             
-                        // console.log(credentialResponse);
-                      }}
-                      onError={() => {
-                        console.log('Login Failed');
-                      }} /></div>)
-                     }
+                       <div>
+                        <GoogleLogin 
+                        onSuccess={credentialResponse => {
+                            getUser(credentialResponse)
+                 
+                            // console.log(credentialResponse);
+                          }}
+                          onError={() => {
+                            console.log('Login Failed');
+                          }}
+                       />
+                       </div>
+                       )}
 
 
                     </div>
