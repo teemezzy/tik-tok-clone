@@ -2,7 +2,7 @@ import type { NextComponentType, NextPageContext } from "next";
 import { useRouter } from 'next/router';
 import { useState } from 'react'
 import Link from 'next/link'
-import { GoogleLogin, GoogleLogout } from 'react-google-login'
+import { GoogleLogin } from '@react-oauth/google';
 import { AiFillHome, AiOutlineMenu } from 'react-icons/ai'
 import { ImCancelCircle } from 'react-icons/im'
 import Discover from "./Discover";
@@ -51,12 +51,17 @@ const Sidebar: NextComponentType<NextPageContext, {}, Props> = (
               <div className='pr-4 '>
 
                 <p className='text-center py-3'>Click here to login</p>
-                <GoogleLogin clientId=""
-                  render={renderProps => (
-                    <button className='bg-white text-lg text-gray-700 shadow-lg px-6 py-3 border-[1px] border-[#ff407b] outline-none w-full rounded-md hover:text-white hover:bg-[#ff407b] ' onClick={renderProps.onClick} disabled={renderProps.disabled}> Log in </button>
-                  )}
-                  buttonText="Login"
-                  onSuccess={() => { }} onFailure={() => { }} cookiePolicy={'single_host_origin'} />
+                <GoogleLogin
+                  // render={renderProps => (
+                  //   <button className='bg-white text-lg text-gray-700 shadow-lg px-6 py-3 border-[1px] border-[#ff407b] outline-none w-full rounded-md hover:text-white hover:bg-[#ff407b] ' onClick={renderProps.onClick} disabled={renderProps.disabled}> Log in </button>
+                  // )}
+                  // buttonText="Login"
+                  onSuccess={credentialResponse => {
+                    console.log(credentialResponse);
+                  }}
+                  onError={() => {
+                    console.log('Login Failed');
+                  }} />
               </div>
             </div>
           )}
